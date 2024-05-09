@@ -18,5 +18,31 @@
  */
 
 const waterBlocks = value => {
-  return
-}
+  let left = 0
+  let right = value.length - 1;
+  let maxLeft = 0;
+  let maxRight = 0;
+  let trappedWater = 0;
+
+  while (left < right) {
+    if (value[left] < value[right]) {
+      if (value[left] > maxLeft) {
+        maxLeft = value[left];
+      } else {
+        trappedWater += maxLeft - value[left];
+      }
+      left++;
+    } else {
+      if (value[right] > maxRight) {
+        maxRight = value[right];
+      } else {
+        trappedWater += maxRight - value[right];
+      }
+      right--;
+    }
+  };
+  
+  return trappedWater;
+};
+
+console.log(waterBlocks([4, 0, 3, 6, 1, 3]));
