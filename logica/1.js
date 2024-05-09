@@ -18,5 +18,25 @@
 // {car: 'y', veces: 2}
 
 const contarCar = value => {
-  return
+  let noSpaces = value.replace(/\s/g, '');
+  let normalized = noSpaces.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+  let arr = normalized.split('');
+
+  let charCount = new Map();
+
+  arr.forEach(char => {
+    if (charCount.has(char)) {
+      charCount.set(char, charCount.get(char) + 1);
+    } else {
+      charCount.set(char, 1);
+    }
+  });
+
+  let result = Array.from(charCount, ([char, count]) => ({car: char, veces: count}));
+
+  result.sort((a, b) => a.car.localeCompare(b.car));
+
+  return result;
 }
+
+console.log(contarCar('Hoy ya es día 10'));
