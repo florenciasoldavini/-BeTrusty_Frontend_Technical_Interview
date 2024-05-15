@@ -141,82 +141,86 @@ export default function ApartmentDetail() {
       </div>
 
       <div className="flex flex-col sm:flex-row-reverse">
-        <div className="flex flex-col gap-6">
-          <table className="table-auto w-80 border-collapse">
-            <tbody>
-              <tr>
-                <td
-                  className="py-5 border border-white border-opacity-30"
-                  colSpan="2"
-                >
-                  <div className="flex flex-row items-center justify-between">
-                    <div className="text-center flex flex-col">
-                      <p>${propertyMockData.pricePerNight} USD por noche</p>
-                      <p>Precio por habitación</p>
+        <div className="font-roboto flex flex-col gap-6">
+          <div className="max-w-80 mx-auto rounded-lg overflow-hidden border border-white border-opacity-30">
+            <table className="table-fixed w-full border-collapse">
+              <tbody>
+                <tr>
+                  <td
+                    className="border-t border-r border-white border-opacity-30 px-5 py-4"
+                    colSpan="2"
+                  >
+                    <div className="flex flex-row items-center justify-between">
+                      <div className="text-center flex flex-col">
+                        <p className="font-semibold text-2xl">
+                          ${propertyMockData.pricePerNight} USD por noche
+                        </p>
+                        <p>Precio por habitación</p>
+                      </div>
+                      <button>
+                        <PencilIcon />
+                      </button>
                     </div>
-                    <button>
-                      <PencilIcon />
-                    </button>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td className="text-center border border-white border-opacity-30">
-                  CHECK-IN
-                  <DatePicker
-                    placeholderText="dd/mm/aaaa"
-                    selected={checkInDate}
-                    onChange={handleCheckInChange}
-                    dateFormat="dd/MM/yyyy"
-                    className="bg-transparent shadow-md rounded-lg p-2 text-center"
-                  />
-                </td>
-                <td className="text-center border border-white border-opacity-30">
-                  CHECK-OUT
-                  <DatePicker
-                    placeholderText="dd/mm/aaaa"
-                    selected={checkOutDate}
-                    onChange={handleCheckOutChange}
-                    dateFormat="dd/MM/yyyy"
-                    className="bg-transparent shadow-md rounded-lg p-2 text-center"
-                  />
-                </td>
-              </tr>
-              <tr>
-                <td
-                  className="text-center border border-white border-opacity-30"
-                  colSpan="2"
-                >
-                  Cantidad de días: {numberOfDays}
-                </td>
-              </tr>
-              <tr>
-                <td
-                  className="text-center border border-white border-opacity-30"
-                  colSpan="2"
-                >
-                  Depósito reembolsable: $60 USD
-                </td>
-              </tr>
-              <tr>
-                <td
-                  className="text-center border border-white border-opacity-30"
-                  colSpan="2"
-                >
-                  Ingreso total: $
-                  {propertyMockData.pricePerNight * numberOfDays} USD
-                </td>
-              </tr>
-            </tbody>
-          </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td className="border-t border-r border-white border-opacity-30 text-center font-bold py-4">
+                    CHECK-IN
+                    <DatePicker
+                      placeholderText="dd/mm/aaaa"
+                      selected={checkInDate}
+                      onChange={handleCheckInChange}
+                      dateFormat="dd/MM/yyyy"
+                      className="w-40 bg-transparent shadow-md rounded-lg p-2 text-center"
+                    />
+                  </td>
+                  <td className="border-t border-white border-opacity-30 text-center font-bold py-4">
+                    CHECK-OUT
+                    <DatePicker
+                      placeholderText="dd/mm/aaaa"
+                      selected={checkOutDate}
+                      onChange={handleCheckOutChange}
+                      dateFormat="dd/MM/yyyy"
+                      className="w-40 bg-transparent shadow-md rounded-lg p-2 text-center"
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    className="border-t border-r border-white border-opacity-30 text-center px-5 py-4"
+                    colSpan="2"
+                  >
+                    Cantidad de días: {numberOfDays}
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    className="border-t border-r border-white border-opacity-30 text-center px-5 py-4"
+                    colSpan="2"
+                  >
+                    Depósito reembolsable: $60 USD
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    className="border-t border-white border-opacity-30 text-center px-5 py-4"
+                    colSpan="2"
+                  >
+                    Ingreso total: $
+                    {propertyMockData.pricePerNight * numberOfDays} USD
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
           <div>
-            <button className="h-8 w-80 py-2 text-black bg-blue rounded-2xl">
+            <button className="h-8 w-80 py-2 text-black bg-blue rounded-2xl flex items-center justify-center">
               Invitar inquilino
             </button>
           </div>
         </div>
 
-        <div>
+        <div className="p-6">
           <div>
             <ul className="flex flex-col gap-2.5">
               <li className="flex flex-row items-center">
