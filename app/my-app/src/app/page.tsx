@@ -13,6 +13,8 @@ import BedIcon from "../components/icons/BedIcon";
 import BathtubIcon from "../components/icons/BathtubIcon";
 import WifiIcon from "../components/icons/WifiIcon";
 import CarIcon from "../components/icons/CarIcon";
+import ArrowRightIcon from "../components/icons/ArrowRightIcon";
+import ArrowLeftIcon from "../components/icons/ArrowLeftIcon";
 import ProfilePicture from "../../public/assets/profile-picture.png";
 
 export default function ApartmentDetail() {
@@ -64,7 +66,9 @@ export default function ApartmentDetail() {
   };
 
   const handlePrevSlide = () => {
-    setCurrentSlide((prevSlide) => (prevSlide - 1 + images.length) % images.length);
+    setCurrentSlide(
+      (prevSlide) => (prevSlide - 1 + images.length) % images.length
+    );
   };
 
   return (
@@ -122,15 +126,15 @@ export default function ApartmentDetail() {
             </div>
             <button
               onClick={handlePrevSlide}
-              className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-2"
+              className="h-11 w-11 bg-black bg-opacity-30 absolute left-2 top-1/2 transform -translate-y-1/2 border border-white rounded-full flex items-center justify-center"
             >
-              Prev
+              <ArrowLeftIcon />
             </button>
             <button
               onClick={handleNextSlide}
-              className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-2"
+              className="h-11 w-11 bg-black bg-opacity-30 absolute right-2 top-1/2 transform -translate-y-1/2 border border-white rounded-full flex items-center justify-center"
             >
-              Next
+              <ArrowRightIcon />
             </button>
           </div>
         </div>
@@ -141,7 +145,10 @@ export default function ApartmentDetail() {
           <table className="table-auto w-80 border-collapse">
             <tbody>
               <tr>
-                <td className="py-5 border border-white border-opacity-30" colSpan="2">
+                <td
+                  className="py-5 border border-white border-opacity-30"
+                  colSpan="2"
+                >
                   <div className="flex flex-row items-center justify-between">
                     <div className="text-center flex flex-col">
                       <p>${propertyMockData.pricePerNight} USD por noche</p>
@@ -176,18 +183,28 @@ export default function ApartmentDetail() {
                 </td>
               </tr>
               <tr>
-                <td className="text-center border border-white border-opacity-30" colSpan="2">
+                <td
+                  className="text-center border border-white border-opacity-30"
+                  colSpan="2"
+                >
                   Cantidad de días: {numberOfDays}
                 </td>
               </tr>
               <tr>
-                <td className="text-center border border-white border-opacity-30" colSpan="2">
+                <td
+                  className="text-center border border-white border-opacity-30"
+                  colSpan="2"
+                >
                   Depósito reembolsable: $60 USD
                 </td>
               </tr>
               <tr>
-                <td className="text-center border border-white border-opacity-30" colSpan="2">
-                  Ingreso total: ${propertyMockData.pricePerNight * numberOfDays} USD
+                <td
+                  className="text-center border border-white border-opacity-30"
+                  colSpan="2"
+                >
+                  Ingreso total: $
+                  {propertyMockData.pricePerNight * numberOfDays} USD
                 </td>
               </tr>
             </tbody>
