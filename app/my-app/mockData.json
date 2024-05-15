@@ -1,0 +1,12 @@
+{
+    "id": 1,
+    "name": "Frank Apart",
+    "pricePerNight": 60,
+    "description": "Este hermoso apartamento de 2 habitaciones se encuentra en el corazón de la ciudad, a solo unos pasos de los mejores restaurantes, tiendas y lugares de interés turístico. El apartamento es ideal para aquellos que buscan un espacio cómodo y acogedor en el que relajarse después de un largo día de trabajo o de turismo.",
+    "owner": {
+        "id": 1,
+        "name": "Elon",
+        "lastName": "Musk",
+        "image": "./public/assets/profile-picture.png"
+  }
+}
