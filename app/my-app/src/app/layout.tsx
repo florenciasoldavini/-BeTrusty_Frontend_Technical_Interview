@@ -20,9 +20,9 @@ export default function RootLayout({
       <head></head>
       <body className="w-full bg-gray_dark">
         <div className="min-h-screen bg-gray-dark">
-          <div className="flex flex-col min-h-screen">
+          <div className="flex flex-col min-h-screen mb-24 md:ml-24">
             <TopBar />
-            <main className="flex-grow">{children}</main>
+            <main>{children}</main>
           </div>
           <Navbar className="fixed flex flex-row h-24 w-full items-center justify-between md:flex-col md:h-full md:w-24 md:left-0 top-0 " />
         </div>
