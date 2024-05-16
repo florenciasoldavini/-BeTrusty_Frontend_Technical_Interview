@@ -37,6 +37,6 @@ const contarCar = value => {
   result.sort((a, b) => a.car.localeCompare(b.car));
 
   return result;
-}
+};
 
 console.log(contarCar('Hoy ya es día 10'));

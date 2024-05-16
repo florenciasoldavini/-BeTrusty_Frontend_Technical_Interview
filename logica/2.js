@@ -36,6 +36,6 @@ const t9Keyboard = value => {
   });
 
   return result;
-}
+};
 
 console.log(t9Keyboard('6-666-88-777-33-3-33-888'));

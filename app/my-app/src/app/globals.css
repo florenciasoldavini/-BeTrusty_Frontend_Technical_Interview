@@ -19,10 +19,6 @@
   }
 }
 
-body {
-  @apply bg-gray-dark;
-}
-
 @layer utilities {
   .text-balance {
     text-wrap: balance;

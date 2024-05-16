@@ -17,7 +17,7 @@ import ArrowRightIcon from "../components/icons/ArrowRightIcon";
 import ArrowLeftIcon from "../components/icons/ArrowLeftIcon";
 import ProfilePicture from "../../public/assets/profile-picture.png";
 
-export default function ApartmentDetail() {
+export default function ApartmentDetail () {
   const [checkInDate, setCheckInDate] = useState<Date | null>(null);
   const [checkOutDate, setCheckOutDate] = useState<Date | null>(null);
   const [numberOfDays, setNumberOfDays] = useState(0);
@@ -57,7 +57,7 @@ export default function ApartmentDetail() {
     { src: "/assets/room-1.png", width: 600, height: 400 },
     { src: "/assets/room-2.png", width: 600, height: 400 },
     { src: "/assets/room-3.png", width: 600, height: 400 },
-    { src: "/assets/room-4.png", width: 600, height: 400 },
+    { src: "/assets/room-4.png", width: 600, height: 400 }
     // Add more images as needed
   ];
 
@@ -89,17 +89,48 @@ export default function ApartmentDetail() {
 
       <div className="relative">
         {/* Gallery for Desktop */}
-        <div className="hidden md:grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-          {images.map((image, index) => (
+        <div className="hidden md:grid grid-cols-4 grid-rows-2 gap-4">
+          <div className="col-span-2 row-span-2">
             <Image
-              key={index}
-              src={image.src}
-              alt={`Image ${index + 1}`}
-              width={image.width}
-              height={image.height}
-              className="w-full h-auto"
+              src={images[0].src}
+              alt="Image 1"
+              width={images[0].width}
+              height={images[0].height}
+              className="w-full h-full object-cover"
             />
-          ))}
+          </div>
+          <div className="col-span-1 row-span-1">
+            <Image
+              src={images[1].src}
+              alt="Image 2"
+              width={images[1].width}
+              height={images[1].height}
+              className="w-full h-full object-cover"
+            />
+          </div>
+          <div className="col-span-1 row-span-1 flex items-center justify-center">
+            <button className="w-full h-full bg-black text-white ">
+              Ver más
+            </button>
+          </div>
+          <div className="col-span-1 row-span-1">
+            <Image
+              src={images[3].src}
+              alt="Image 4"
+              width={images[3].width}
+              height={images[3].height}
+              className="w-full h-full object-cover"
+            />
+          </div>
+          <div className="col-span-1 row-span-1">
+            <Image
+              src={images[2].src}
+              alt="Image 3"
+              width={images[2].width}
+              height={images[2].height}
+              className="w-full h-full object-cover"
+            />
+          </div>
         </div>
 
         {/* Carousel for Mobile */}
@@ -109,7 +140,7 @@ export default function ApartmentDetail() {
               className="carousel-inner relative w-full transition-transform duration-500 ease-in-out"
               style={{
                 transform: `translateX(-${currentSlide * 100}%)`,
-                display: "flex",
+                display: "flex"
               }}
             >
               {images.map((image, index) => (
@@ -147,7 +178,7 @@ export default function ApartmentDetail() {
               <tbody>
                 <tr>
                   <td
-                    className="border-t border-r border-white border-opacity-30 px-5 py-4"
+                    className="border-t border-r border-white border-opacity-30 py-4"
                     colSpan="2"
                   >
                     <div className="flex flex-row items-center justify-between">
@@ -187,7 +218,7 @@ export default function ApartmentDetail() {
                 </tr>
                 <tr>
                   <td
-                    className="border-t border-r border-white border-opacity-30 text-center px-5 py-4"
+                    className="border-t border-r border-white border-opacity-30 text-center py-4"
                     colSpan="2"
                   >
                     Cantidad de días: {numberOfDays}
@@ -195,7 +226,7 @@ export default function ApartmentDetail() {
                 </tr>
                 <tr>
                   <td
-                    className="border-t border-r border-white border-opacity-30 text-center px-5 py-4"
+                    className="border-t border-r border-white border-opacity-30 text-center py-4"
                     colSpan="2"
                   >
                     Depósito reembolsable: $60 USD
@@ -203,7 +234,7 @@ export default function ApartmentDetail() {
                 </tr>
                 <tr>
                   <td
-                    className="border-t border-white border-opacity-30 text-center px-5 py-4"
+                    className="border-t border-r border-white border-opacity-30 text-center py-4"
                     colSpan="2"
                   >
                     Ingreso total: $

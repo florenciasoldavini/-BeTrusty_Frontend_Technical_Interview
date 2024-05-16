@@ -2,7 +2,6 @@ import type { Config } from "tailwindcss";
 
 const config: Config = {
   content: [
-    // ".src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
@@ -12,7 +11,8 @@ const config: Config = {
         white: "#FFFFFF",
         blue: "#33EAFF",
         black: "#000000",
-        "gray-dark": "#0F172A",
+        gray_dark: "#0F172A",
+        blue_dark: "#162342"
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
@@ -21,11 +21,11 @@ const config: Config = {
       },
       fontFamily: {
         roboto: ["Roboto", "sans-serif"],
-        poppins: ["Poppins", "sans-serif"],
-      },
-    },
+        poppins: ["Poppins", "sans-serif"]
+      }
+    }
   },
-  plugins: [],
+  plugins: []
 };
 
 export default config;
