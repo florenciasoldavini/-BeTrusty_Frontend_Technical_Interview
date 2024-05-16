@@ -16,8 +16,9 @@ import CarIcon from "../components/icons/CarIcon";
 import ArrowRightIcon from "../components/icons/ArrowRightIcon";
 import ArrowLeftIcon from "../components/icons/ArrowLeftIcon";
 import ProfilePicture from "../../public/assets/profile-picture.png";
+import ShowAllIcon from "../../public/assets/show-all-images-icon.png";
 
-export default function ApartmentDetail () {
+export default function ApartmentDetail() {
   const [checkInDate, setCheckInDate] = useState<Date | null>(null);
   const [checkOutDate, setCheckOutDate] = useState<Date | null>(null);
   const [numberOfDays, setNumberOfDays] = useState(0);
@@ -57,7 +58,7 @@ export default function ApartmentDetail () {
     { src: "/assets/room-1.png", width: 600, height: 400 },
     { src: "/assets/room-2.png", width: 600, height: 400 },
     { src: "/assets/room-3.png", width: 600, height: 400 },
-    { src: "/assets/room-4.png", width: 600, height: 400 }
+    { src: "/assets/room-4.png", width: 600, height: 400 },
     // Add more images as needed
   ];
 
@@ -109,8 +110,8 @@ export default function ApartmentDetail () {
             />
           </div>
           <div className="col-span-1 row-span-1 flex items-center justify-center">
-            <button className="w-full h-full bg-black text-white ">
-              Ver más
+            <button className="w-full h-full bg-black text-white font-roboto">
+              Ver los detalles de las habitaciones
             </button>
           </div>
           <div className="col-span-1 row-span-1">
@@ -122,7 +123,7 @@ export default function ApartmentDetail () {
               className="w-full h-full object-cover"
             />
           </div>
-          <div className="col-span-1 row-span-1">
+          <div className="col-span-1 row-span-1 relative">
             <Image
               src={images[2].src}
               alt="Image 3"
@@ -130,6 +131,15 @@ export default function ApartmentDetail () {
               height={images[2].height}
               className="w-full h-full object-cover"
             />
+              <button className="absolute h-10 w-56 bottom-4 right-4 bg-white text-black flex flex-row text-center font-roboto font-semibold justify-center items-center rounded">
+            <Image
+              src={ShowAllIcon}
+              alt="icon"
+              width="auto"
+              height="30"
+            />
+              Mostrar todas las fotos
+            </button>
           </div>
         </div>
 
@@ -140,7 +150,7 @@ export default function ApartmentDetail () {
               className="carousel-inner relative w-full transition-transform duration-500 ease-in-out"
               style={{
                 transform: `translateX(-${currentSlide * 100}%)`,
-                display: "flex"
+                display: "flex",
               }}
             >
               {images.map((image, index) => (
@@ -172,13 +182,13 @@ export default function ApartmentDetail () {
       </div>
 
       <div className="flex flex-col sm:flex-row-reverse">
-        <div className="font-roboto flex flex-col gap-6">
+        <div className="font-roboto flex flex-col gap-6 items-center">
           <div className="max-w-80 mx-auto rounded-lg overflow-hidden border border-white border-opacity-30">
             <table className="table-fixed w-full border-collapse">
               <tbody>
                 <tr>
                   <td
-                    className="border-t border-r border-white border-opacity-30 py-4"
+                    className="border-t border-r border-white border-opacity-30 py-4 px-5"
                     colSpan="2"
                   >
                     <div className="flex flex-row items-center justify-between">
@@ -218,7 +228,7 @@ export default function ApartmentDetail () {
                 </tr>
                 <tr>
                   <td
-                    className="border-t border-r border-white border-opacity-30 text-center py-4"
+                    className="border-t border-r border-white border-opacity-30 text-center py-4 px-5"
                     colSpan="2"
                   >
                     Cantidad de días: {numberOfDays}
@@ -226,7 +236,7 @@ export default function ApartmentDetail () {
                 </tr>
                 <tr>
                   <td
-                    className="border-t border-r border-white border-opacity-30 text-center py-4"
+                    className="border-t border-r border-white border-opacity-30 text-center py-4 px-5"
                     colSpan="2"
                   >
                     Depósito reembolsable: $60 USD
@@ -234,7 +244,7 @@ export default function ApartmentDetail () {
                 </tr>
                 <tr>
                   <td
-                    className="border-t border-r border-white border-opacity-30 text-center py-4"
+                    className="border-t border-r border-white border-opacity-30 text-center py-4 px-5"
                     colSpan="2"
                   >
                     Ingreso total: $
@@ -251,7 +261,7 @@ export default function ApartmentDetail () {
           </div>
         </div>
 
-        <div className="p-6">
+        <div className="flex flex-col gap-8 p-6">
           <div>
             <ul className="flex flex-col gap-2.5">
               <li className="flex flex-row items-center">
@@ -282,7 +292,7 @@ export default function ApartmentDetail () {
           </div>
 
           <div>
-            <h2 className="font-roboto font-bold text-xl">Descripción</h2>
+            <h2 className="font-roboto font-bold text-xl ">Descripción</h2>
             <p>{propertyMockData.description}</p>
           </div>
 
